@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import OrderDetailsScreen from './screens/order-datails';
+import OrderDetailsScreen from './screens/orderDetails';
 import { Header } from './components';
 
 function App() {

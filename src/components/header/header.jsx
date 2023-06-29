@@ -5,7 +5,7 @@ import { FaShoppingCart, FaUserCircle, } from 'react-icons/fa';
 const Header = () => {
   return (
    <Container maxW="100%" bg="green" h="50px">
-    <Grid templateColumns="auto auto auto">
+    <Grid templateColumns="auto auto">
      <Grid templateColumns="auto auto auto" gap={40}>
         <GridItem textAlign="center">
           <Text color="#fff" >Reeco</Text>
@@ -22,7 +22,7 @@ const Header = () => {
                 ))}
         </Grid>
      </Grid>
-     <Grid templateColumns="auto auto auto" justifyContent="flex-end" alignItems="center" gap={40} ml={400}>
+     <Grid templateColumns="auto auto auto" justifyContent="flex-end" alignItems="center" gap={40}>
        <GridItem style={{position: 'relative'}}>
          <Text m="0">
          <FaShoppingCart color="#fff" />

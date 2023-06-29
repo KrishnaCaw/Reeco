@@ -1,5 +1,5 @@
 import React from 'react';
-import { CustomButton } from '../../components';
+import { CustomButton } from '../../styledComponents';
 
 const OrderDetailsScreen = () => {
   return (
