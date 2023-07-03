@@ -16,6 +16,12 @@ const Text = styled.span`
     `};
 
   ${(props) =>
+    props.lightgreen &&
+    css`
+      color: #52c41a;
+    `};
+
+  ${(props) =>
     props.orange &&
     css`
       color: orange;

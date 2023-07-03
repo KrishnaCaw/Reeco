@@ -4,14 +4,14 @@ const Container = styled.div`
   ${(props) =>
     props.primary &&
     css`
-      background: green;
+      background: #1e633f;
     `};
 
   ${(props) =>
     props.navbar &&
     css`
-      min-height: 30px;
-      padding-top: 10px;
+      min-height: 40px;
+      padding-top: 15px;
     `};
 
   ${(props) =>
@@ -25,6 +25,22 @@ const Container = styled.div`
     props.paddingTop &&
     css`
       padding-top: 10px;
+    `}
+  ${(props) =>
+    props.padding &&
+    css`
+      padding: 5px;
+    `}
+
+  ${(props) =>
+      props.paddingTop20 &&
+      css`
+        padding-top: 20px;
+    `}
+    ${(props) =>
+      props.marginTop &&
+      css`
+        margin-top: 20px;
     `}
 
   ${(props) =>

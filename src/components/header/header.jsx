@@ -1,40 +1,75 @@
-import React from 'react';
-import { Container, Grid, GridItem, Text } from '@chakra-ui/react';
-import { FaShoppingCart, FaUserCircle, } from 'react-icons/fa';
+import React from "react";
+import {Container, Text} from "../../styledComponents";
+import { Row, Col } from "antd";
+import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
+import { ShoppingCartOutlined } from "@ant-design/icons";
 
-const Header = () => {
+const Header = (props) => {
+  const cartLength = useSelector((state) => state.orders.cart.length);
+
   return (
-   <Container maxW="100%" bg="green" h="50px">
-    <Grid templateColumns="auto auto">
-     <Grid templateColumns="auto auto auto" gap={40}>
-        <GridItem textAlign="center">
-          <Text color="#fff" >Reeco</Text>
-        </GridItem>
-        <Grid templateColumns="auto auto auto">
-        {["Store", "Orders", "Analytics"].map((key, index) => (
-                  <GridItem key={key} textAlign="left">
+    <>
+      <Container primary>
+        <Container navbar leaveMargin>
+          <Row>
+            <Col span={12}>
+              <Row gutter={30}>
+                <Col>
+                  <Text white bold>
+                    Reeco
+                  </Text>
+                </Col>
+                {["Store", "Orders", "Analytics"].map((key, index) => (
+                  <Col key={key}>
                     <Text
-                      color="#fff"
+                      as={motion.div}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                      white
                     >
                       {key}
                     </Text>
-                  </GridItem>
+                  </Col>
                 ))}
-        </Grid>
-     </Grid>
-     <Grid templateColumns="auto auto auto" justifyContent="flex-end" alignItems="center" gap={40}>
-       <GridItem style={{position: 'relative'}}>
-         <Text m="0">
-         <FaShoppingCart color="#fff" />
-          </Text>
-         <Text color="#fff" style={{ position: 'absolute', top: -10, right: -10}} m="0">6</Text>
-       </GridItem>
-       <GridItem>
-         <Text color="#fff">Hello Krishna</Text>
-       </GridItem>
-     </Grid>
-     </Grid>
-   </Container>
+              </Row>
+            </Col>
+            <Col span={12}>
+              <Container>
+                <Row gutter={30} justify={"end"}>
+                  <Col>
+                    <Container
+                      as={motion.div}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      <Text bold white heading>
+                        <ShoppingCartOutlined />
+                      </Text>
+                      <Text white bold cartcount>
+                        {cartLength}
+                      </Text>
+                    </Container>
+                  </Col>
+                  <Col>
+                    <Container
+                      as={motion.div}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      <Text white="true" bold="true">{`Hello Krishna`}</Text>
+                    </Container>
+                  </Col>
+                </Row>
+              </Container>
+            </Col>
+          </Row>
+        </Container>
+      </Container>
+    </>
   );
 };
 

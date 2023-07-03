@@ -1,12 +1,15 @@
 import React from 'react';
 import { CustomButton } from '../../styledComponents';
+import OrderHeader from './orderHeader';
+import OrderSummary from './orderSummary';
+import OrderContents from './orderContents';
 
 const OrderDetailsScreen = () => {
   return (
    <div>
-     <CustomButton>
-       Custom Button
-     </CustomButton>
+    <OrderHeader />
+    <OrderSummary />
+    <OrderContents />
    </div>
   )
 }
